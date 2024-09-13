@@ -1,0 +1,36 @@
+#main class
+package com.example.demo;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
+
+@SpringBootApplication
+public class DemoApplication {
+
+	public static void main(String[] args) {
+		ApplicationContext context=SpringApplication.run(DemoApplication.class, args);
+		Dev obj=context.getBean(Dev.class);
+		obj.build();
+	}
+}
+
+#class
+package com.example.demo;
+import org.springframework.stereotype.Component;
+@Component
+public class Dev {
+    public void build(){
+        System.out.println("Working on Awesome project");
+    }
+    
+}
+
+#OUTPUT
+Working on Awesome project
+
+
+Flow Summary:
+The DemoApplication class starts the Spring application using SpringApplication.run().
+Spring scans the package for beans, finds the Dev class (because of the @Component annotation), and registers it as a Spring-managed bean.
+The Dev bean is fetched from the Spring container using context.getBean(Dev.class).
+The build() method of the Dev bean is called, printing "Working on Awesome project".
