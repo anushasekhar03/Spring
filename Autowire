@@ -1,0 +1,40 @@
+#Dev.java
+package com.example.demo;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
+
+public class Dev {
+    @Autowired //field injection
+    private Laptop laptop;
+
+ public Dev(Laptop laptop){   //constructor injecting
+        this.laptop=laptop;
+   }
+
+
+
+ public void setLaptop(Laptop laptop){ //setter injection
+        this.laptop=laptop;
+    }
+    public void build(){
+             laptop.compile();
+        System.out.println("Working on Awesome project");
+    }
+    
+}
+#laptop class
+package com.example.demo;
+
+import org.springframework.stereotype.Component;
+@Component
+public class Laptop {
+    public void compile()
+    {
+        System.out.println("Compiling with 404 bugs");
+    }
+}
+
+
