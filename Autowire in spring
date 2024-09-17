@@ -26,10 +26,8 @@ public class App {
 <!--        <property name="laptop" ref="lap1"/>-->
 <!--        <property name="com"  ref="lap1"/>-->
     </bean>
-
     <bean id="com" class="org.example.Laptop" primary="true"/>
 <bean id="com1" class="org.example.Desktop"/>
-
 </beans>
 
 package org.example{
@@ -37,3 +35,11 @@ public interface Computer {
     void compile();
 
 }
+
+#OUTPUT
+In dev constructor
+Desktop  in constructor
+Working on Awesome Project
+Compiling in Desktop
+
+
