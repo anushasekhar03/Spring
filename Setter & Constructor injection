@@ -1,0 +1,60 @@
+Dev.java
+package org.example;
+
+public class Dev {
+    private int age;
+    private Laptop laptop;
+
+    public Dev() {
+        System.out.println("In dev constructor");
+    }
+
+    public Dev(int age) {
+        this.age = age;
+        System.out.println("Dev constructor with age: " + age);
+    }
+    public int getAge() {
+        return age;
+    }
+    public void setAge(int age) {
+        this.age = age;
+    }
+    public void build() {
+        System.out.println("Working on Awesome Project");
+    }
+    public Laptop getLaptop() {
+        return laptop;
+    }
+    public void setLaptop(Laptop laptop) {
+        this.laptop = laptop;
+    }
+}
+
+
+App.java
+package org.example;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+public class App {
+    public static void main(String[] args) {
+        ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml"); // creates container
+        Dev obj = (Dev) context.getBean("dev");
+        System.out.println("Age: " + obj.getAge()); // prints the injected age
+        obj.build(); // method call
+        //obj.getLaptop().build(); // laptop object method call
+    }
+}
+
+Laptop.java
+package org.example;
+
+public class Laptop {
+    public void build() {
+        System.out.println("got errors");
+    }
+}
+
+
+Spring.xml
+
