@@ -1,0 +1,32 @@
+--> package com.telusko.demo;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+@SpringBootApplication
+public class WebAppApplication {
+	public static void main(String[] args) {
+		SpringApplication.run(WebAppApplication.class, args);
+	}
+}
+
+-->package com.telusko.demo;
+package com.telusko.demo;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController   //we want to return the data
+public class HomeController {
+     @RequestMapping("/")
+    public String greet(){
+        return "Hello world!!!";
+    }
+    @RequestMapping("/about")
+    public String about(){
+        return "I am a developer!!!";
+    }
+}
+
+#OUTPUT-GOTO GOOGLE>TYPE LOCLHOST:8080-->OUTPUT Hello world
+
